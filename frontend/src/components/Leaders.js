@@ -1,5 +1,8 @@
 import React from 'react';
-import './LeaderStyle.css'
+import './LeaderStyle.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+
 
 function Leaders() {
   return (

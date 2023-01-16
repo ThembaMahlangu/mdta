@@ -1,7 +1,8 @@
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Leaders from '../assets/Chosen5.jpg';
+import HeroImage from '../assets/Chosen5.jpg';
+import Leaders from "../components/Leaders";
 
 function Leadership() {
     return (
@@ -9,10 +10,11 @@ function Leadership() {
         <Navbar/>
         <Hero
           cName="hero-accomodation"
-          heroImg={Leaders}
+          heroImg={HeroImage}
           title="MDTA Leadership Structure" 
           btnClass="hide"
         />
+        <Leaders/>
         <Footer/>
       </>
     );

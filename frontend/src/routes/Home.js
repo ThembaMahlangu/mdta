@@ -2,7 +2,8 @@ import Property from "../components/Property";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import TaxiRank from "../assets/Chosen3edit.jpg"
+import TaxiRank from "../assets/Chosen1.jpg"
+import CommutersFeedback from "../components/CommutersFeedback";
 
 function Home() {
   return (
@@ -11,13 +12,14 @@ function Home() {
       <Hero
         cName="hero"
         heroImg={TaxiRank}
-        title="Stay Informed About Your Daily Commute Service"
-        text="Dedicated To Serving Our Community Transport Needs."
+        title="Middelburg and District Taxi Association"
+        text="Together As One."
         buttonText="Book Now"
         url="/contact"
         btnClass="show"
       />
       <Property/>
+      <CommutersFeedback/>
       <Footer/>
     </>
   );

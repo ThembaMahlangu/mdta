@@ -10,7 +10,7 @@ function Leadership() {
         <Navbar/>
         <Hero
           cName="hero-accomodation"
-          heroImg={HeroImage}
+          heroImg={'https://sataxi.co.za/wp-content/uploads/2022/05/SA-Taxi-Exploring-Minibus-Taxi-to-improve-public-transport.jpg'}
           title="MDTA Leadership Structure" 
           btnClass="hide"
         />

@@ -12,11 +12,7 @@ function Contact() {
         cName="hero-contact"
         heroImg={AboutImg}
         title="Book A Trip"
-<<<<<<< HEAD
-        buttonText="Staff Transport"
-=======
         buttonText="Staff Transport Here"
->>>>>>> eab0c2a (fixing it back)
         btnClass="show"
         url="/bookingform"
       />

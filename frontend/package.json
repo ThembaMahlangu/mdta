@@ -1,5 +1,6 @@
 {
   "name": "react",
+  "proxy": "localhost:8000",
   "version": "1.0.0",
   "description": "React example starter project",
   "keywords": [
@@ -12,6 +13,8 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@material-ui/core": "^4.12.4",
+    "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
     "react": "18.2.0",

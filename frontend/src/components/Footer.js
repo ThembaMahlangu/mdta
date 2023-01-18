@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="top">
           <div>
             <h1>M.D.T.A</h1>
-            <p>Dedicated To Serving Our Community Transport Needs</p>
+            <p>Together As One</p>
           </div>
           <div>
             <a href="/">
@@ -33,7 +33,7 @@ const Footer = () => {
             <h4>Get in touch</h4>
             <a>Email: info@mdta.co.za</a>
             <a>Tel: 013 243 3939</a>
-            <a>WhatsApp: 076 936 0246</a>
+            <a>WhatsApp: Not Available</a>
           </div>
 
           {/* <div>
@@ -45,19 +45,19 @@ const Footer = () => {
           </div> */}
 
           <div>
-            <h4>Important Links</h4>
-            <a href="/">Office Structure</a>
-            <a href="/">Emergencies</a>
-            <a href="/">Sponsors</a>
-            <a href="/">Staff Transport Booking</a>
-          </div>
-
-          <div>
             <h4>Help</h4>
             <a href="/">Support</a>
             <a href="/">Troubleshooting</a>
             <a href="/contact">Contact Us</a>
             <a href="/bookingform">Booking Page</a>
+          </div>
+
+          <div>
+            <h4>Important Links</h4>
+            <a href="/driversfeedback">Driver's Feedback</a>
+            <a href="/">Sponsors</a>
+            <a href="/">Office Structure</a>
+            <a href="/">Emergencies</a>
           </div>
 
           <div>
@@ -70,7 +70,7 @@ const Footer = () => {
       </div>
       <div className="copyright">
         <p className="copyright-content">2023 Copyright | M.D.T.A</p>
-        <a href='https://edulinkage.co.za'> Designed by T. Mahlangu</a>
+        <a href='https://wa.me/+27769360246'> Designed by T. Mahlangu</a>
       </div>
     </>
   );

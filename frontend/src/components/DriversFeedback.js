@@ -2,7 +2,7 @@ import "./ContactFormStyles.css";
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-function DriversFeedback() {
+function DriversFeedbacks() {
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -32,4 +32,4 @@ function DriversFeedback() {
   );
 }
 
-export default DriversFeedback;
+export default DriversFeedbacks;

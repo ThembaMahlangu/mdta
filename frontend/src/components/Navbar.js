@@ -30,7 +30,7 @@ class Navbar extends Component {
           </li>
             )
           })}
-          <button><Link style={{textDecoration: 'none', color: "inherit"}} to="/partnerlogin">Admin Login</Link></button>
+          <button><Link style={{textDecoration: 'none', color: "inherit"}} to="/adminlogin">Admin Login</Link></button>
         </ul>
       </nav>
     );

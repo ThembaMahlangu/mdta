@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import TaxiRank from "../assets/Chosen1.jpg"
 import CommutersFeedback from "../components/CommutersFeedback";
+import ComplainsForm from "../components/ComplainsForm";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
       />
       <Property/>
       <CommutersFeedback/>
+      <ComplainsForm/>
       <Footer/>
     </>
   );

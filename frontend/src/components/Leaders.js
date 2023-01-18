@@ -19,7 +19,7 @@ function Leaders() {
                         <h3>J.M Mtsweni</h3>
                         <div className='team-info'>
                             <p>Chairperson</p></div>
-                            <p></p>
+                            <p>This is the person responsible for being head of the organization</p>
 
                             <ul className='team-icon'>
                                 <li><a href='#' className='twitter'>
@@ -202,7 +202,7 @@ function Leaders() {
                     <div className='team-item'>
 
                         <img src='https://thumbs.dreamstime.com/b/businessman-faceless-profile-avatar-isolated-vector-illustration-graphic-design-143627091.jpg' className='team-img' alt='picture'/>
-                        <h3>j Mashishini</h3>
+                        <h3>j Mashinini</h3>
                         <div className='team-info'>
                             <p>Grievance Chairperson</p></div>
                             <p></p>
@@ -264,7 +264,7 @@ function Leaders() {
                     <div className='team-item'>
 
                         <img src='https://thumbs.dreamstime.com/b/businessman-faceless-profile-avatar-isolated-vector-illustration-graphic-design-143627091.jpg' className='team-img' alt='picture'/>
-                        <h3>S.E Mdhluli</h3>
+                        <h3>T.G Sibeko</h3>
                         <div className='team-info'>
                             <p>Additional Member</p></div>
                             <p></p>

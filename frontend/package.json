@@ -1,6 +1,6 @@
 {
   "name": "react",
-  "proxy": "localhost:8000",
+
   "version": "1.0.0",
   "description": "React example starter project",
   "keywords": [

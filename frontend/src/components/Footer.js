@@ -31,6 +31,13 @@ const Footer = () => {
         <div className="bottom">
 
           <div>
+            <h4>Get in touch</h4>
+            <a>info@mdtas.co.za</a>
+            <a>Tel: 013 243 3939</a>
+            <a>WhatsApp: Not Available</a>
+          </div>
+
+          <div>
             <h4>Important Links</h4>
             <a href="/driversfeedback">Driver's Feedback</a>
             <a href="/">Sponsors</a>
@@ -60,13 +67,6 @@ const Footer = () => {
             <a href="/">Terms of service</a>
             <a href="/">Privacy Policy</a>
             <a href="/">License</a>
-          </div>
-          
-          <div>
-            <h4>Get in touch</h4>
-            <a>Mdtaassociation@gmail.com</a>
-            <a>Tel: 013 243 3939</a>
-            <a>WhatsApp: Not Available</a>
           </div>
 
         </div>

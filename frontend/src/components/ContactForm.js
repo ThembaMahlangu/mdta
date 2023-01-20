@@ -1,6 +1,6 @@
-import "./ContactFormStyles.css";
+import axios from 'axios';
 import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import "./ContactFormStyles.css";
 
 function ContactForm() {
   const form = useRef();
@@ -8,14 +8,21 @@ function ContactForm() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_mk5j6fc', 'template_u43pxkb', form.current, 'alhwLOSp2yLNOem4D')
-      .then((result) => {
-          console.log(result.text);
-          console.log("booking sent")
-        }, (error) => {
-            console.log(error.text);
-        });
-        e.target.reset()
+    axios.post('http://localhost:8000/api/tripbookings', {
+        name: e.target.name.value,
+        number: e.target.number.value,
+        triptype: e.target.triptype.value,
+        destination: e.target.destination.value,
+        date: e.target.date.value,
+        message: e.target.message.value,
+    })
+    .then(response => {
+        console.log("booking sent");
+    })
+    .catch(error => {
+        console.log(error);
+    });
+    e.target.reset()
   };
 
   return (
@@ -25,7 +32,7 @@ function ContactForm() {
         <label>Full Name</label>
         <input name="name" placeholder="Name"/>
         <label>Contact Number</label>
-        <input name="contact" placeholder="What is your prefered contact number?"/>
+        <input name="number" placeholder="What is your prefered contact number?"/>
         <label>Trip Type</label>
         <select name="triptype">
           <option>Is this a single trip or return trip?</option>
@@ -38,8 +45,8 @@ function ContactForm() {
         <input name="date" placeholder="Which date will you be travelling?"/>
         <label>Message</label>
         <textarea name="message" placeholder="Type Any Details We must keep in mind when handling your booking" rows={4}/>
-        <button>Send Message</button>
-        <a href="/">Booking for Staff Transport instead? Click Here</a>
+        <button>Send Booking</button>
+        <a href="/bookingform">Booking for Staff Transport instead? Click Here</a>
       </form>
     </div>
   );

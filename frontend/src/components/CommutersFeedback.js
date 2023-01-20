@@ -1,6 +1,6 @@
-import "./ContactFormStyles.css";
 import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import axios from 'axios';
+import "./ContactFormStyles.css";
 
 function CommutersFeedback() {
   const form = useRef();
@@ -8,14 +8,17 @@ function CommutersFeedback() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_mk5j6fc', 'template_u43pxkb', form.current, 'alhwLOSp2yLNOem4D')
-      .then((result) => {
-          console.log(result.text);
-          console.log("booking sent")
-        }, (error) => {
-            console.log(error.text);
-        });
-        e.target.reset()
+    axios.post('http://localhost:8000/api/commutersfeedback', {
+        subject: e.target.subject.value,
+        message: e.target.message.value,
+    })
+    .then(response => {
+        console.log("feedback sent");
+    })
+    .catch(error => {
+        console.log(error);
+    });
+    e.target.reset()
   };
 
   return (

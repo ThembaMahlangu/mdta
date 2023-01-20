@@ -39,7 +39,7 @@ router.get('/', validateToken, async (req, res) => {
 
     // Check if the logged in user has the role of 'main' or 'semi'
     const user = await User.findById(req.userId);
-    if (user.role !== 'main' && user.role !== 'semi') {
+    if (user.role !== 'main' && user.role !== 'complains') {
       return res.status(401).json({ error: 'Unauthorized to view feedbacks' });
     }
 

@@ -1,27 +1,30 @@
-import "./ContactFormStyles.css";
 import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import axios from 'axios';
+import "./ContactFormStyles.css";
 
 function DriversFeedbacks() {
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendFeedback = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_mk5j6fc', 'template_u43pxkb', form.current, 'alhwLOSp2yLNOem4D')
-      .then((result) => {
-          console.log(result.text);
-          console.log("booking sent")
-        }, (error) => {
-            console.log(error.text);
-        });
-        e.target.reset()
+    axios.post('http://localhost:8000/api/driversfeedback', {
+        subject: e.target.subject.value,
+        message: e.target.message.value,
+    })
+    .then(response => {
+        console.log("feedback sent");
+    })
+    .catch(error => {
+        console.log(error);
+    });
+    e.target.reset()
   };
 
   return (
     <div className="form-container">
       <h1>Do you have any feedback that would help improve our service for drivers?</h1>
-      <form ref={form} onSubmit={sendEmail}>
+      <form ref={form} onSubmit={sendFeedback}>
         <label>Subject</label>
         <input name="subject" placeholder="What is the subject or topic of your feedback/suggestion?"/>
         <label>Message</label>

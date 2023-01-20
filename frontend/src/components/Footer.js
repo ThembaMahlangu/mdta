@@ -29,13 +29,15 @@ const Footer = () => {
         </div>
 
         <div className="bottom">
-          <div>
-            <h4>Get in touch</h4>
-            <a>Email: info@mdta.co.za</a>
-            <a>Tel: 013 243 3939</a>
-            <a>WhatsApp: Not Available</a>
-          </div>
 
+          <div>
+            <h4>Important Links</h4>
+            <a href="/driversfeedback">Driver's Feedback</a>
+            <a href="/">Sponsors</a>
+            <a href="/">Office Structure</a>
+            <a href="/">Emergencies</a>
+          </div>
+          
           {/* <div>
             <h4>Business Solutions</h4>
             <a href="/suggestions">Suggest Feature</a>
@@ -52,20 +54,21 @@ const Footer = () => {
             <a href="/bookingform">Booking Page</a>
           </div>
 
-          <div>
-            <h4>Important Links</h4>
-            <a href="/driversfeedback">Driver's Feedback</a>
-            <a href="/">Sponsors</a>
-            <a href="/">Office Structure</a>
-            <a href="/">Emergencies</a>
-          </div>
 
           <div>
             <h4>Others</h4>
-            <a href="/addp">Terms of service</a>
-            <a href="/admindashboard">Privacy Policy</a>
-            <a href="/partnerdashboard">License</a>
+            <a href="/">Terms of service</a>
+            <a href="/">Privacy Policy</a>
+            <a href="/">License</a>
           </div>
+          
+          <div>
+            <h4>Get in touch</h4>
+            <a>Mdtaassociation@gmail.com</a>
+            <a>Tel: 013 243 3939</a>
+            <a>WhatsApp: Not Available</a>
+          </div>
+
         </div>
       </div>
       <div className="copyright">

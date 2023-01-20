@@ -1,5 +1,5 @@
+import axios from 'axios';
 import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
@@ -10,16 +10,22 @@ function BookingForm() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_mk5j6fc', 'template_tyl9ufr', form.current, 'alhwLOSp2yLNOem4D')
-      .then((result) => {
-          console.log(result.text);
-          console.log("booking sent")
-        }, (error) => {
-            console.log(error.text);
-        });
-        e.target.reset()
+    axios.post('http://localhost:8000/api/staffbookings', {
+        name: e.target.name.value,
+        number: e.target.number.value,
+        email: e.target.email.value,
+        passengers: e.target.passengers.value,
+        message: e.target.message.value,
+    })
+    .then(response => {
+        console.log("booking sent");
+    })
+    .catch(error => {
+        console.log(error);
+    });
+    e.target.reset()
   };
-  
+
   return (
     <>
         <Navbar/>
@@ -35,11 +41,11 @@ function BookingForm() {
                 <label>Name</label>
                 <input name='name' placeholder="What is your Full Name?"/>
                 <label>Contact Number</label>
-                <input name='partner' placeholder="What is your prefered contact number?"/>
+                <input name='number' placeholder="What is your prefered contact number?"/>
                 <label>Email</label>
                 <input name='email' placeholder="What is your Email?"/>
                 <label>Number of passengers</label>
-                <select>
+                <select name='passengers'>
                   <option>How many people will be transported per day?</option>
                   <option>15 or less</option>
                   <option>More than 15</option>
@@ -52,7 +58,7 @@ function BookingForm() {
         </div>
         <Footer/>
     </>
-  )
+  );
 }
 
 export default BookingForm;

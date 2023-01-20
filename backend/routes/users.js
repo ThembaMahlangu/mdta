@@ -10,7 +10,7 @@ router.post('/register', [
     body('name').exists(),
     body('email').isEmail(),
     body('password').isLength({min: 8}),
-    body('role').isIn(['main', 'sub', 'semi']),
+    body('role').isIn(['main', 'bookings', 'complains']),
 ],(req, res) => {
     // Find validation errors
     const errors = validationResult(req);

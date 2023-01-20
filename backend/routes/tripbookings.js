@@ -8,7 +8,7 @@ const { body, validationResult } = require('express-validator');
 // section 1: handle trip booking creation
 router.post('/', [
     body('name').exists(),
-    body('number').isNumeric(),
+    body('number').exists(),
     body('triptype').exists(),
     body('destination').exists(),
     body('date').exists(),
@@ -47,7 +47,7 @@ router.get('/', validateToken, async (req, res) => {
 
     // Check if the logged in user has the role of 'main' or 'sub'
     const user = await User.findById(req.userId);
-    if (user.role !== 'main' && user.role !== 'sub') {
+    if (user.role !== 'main' && user.role !== 'bookings') {
       return res.status(401).json({ error: 'Unauthorized to view bookings' });
     }
 

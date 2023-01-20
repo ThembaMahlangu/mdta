@@ -1,27 +1,30 @@
-import "./ContactFormStyles.css";
 import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import axios from 'axios';
+import "./ContactFormStyles.css";
 
 function ComplainsForm() {
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendComplain = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_mk5j6fc', 'template_u43pxkb', form.current, 'alhwLOSp2yLNOem4D')
-      .then((result) => {
-          console.log(result.text);
-          console.log("booking sent")
-        }, (error) => {
-            console.log(error.text);
-        });
-        e.target.reset()
+    axios.post('http://localhost:8000/api/complains', {
+        subject: e.target.subject.value,
+        message: e.target.message.value,
+    })
+    .then(response => {
+        console.log("complain sent");
+    })
+    .catch(error => {
+        console.log(error);
+    });
+    e.target.reset()
   };
 
   return (
     <div className="form-container">
       <h1>Do you have any complains that you would like addressed?</h1>
-      <form ref={form} onSubmit={sendEmail}>
+      <form ref={form} onSubmit={sendComplain}>
         <label>Subject</label>
         <input name="subject" placeholder="What is the subject ot topic of your complain?"/>
         <label>Message</label>

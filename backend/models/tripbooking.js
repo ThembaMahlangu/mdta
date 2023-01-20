@@ -6,7 +6,7 @@ const tripBookingSchema = new mongoose.Schema({
         required: true
     },
     number: {
-        type: Number,
+        type: String,
         required: true
     },
     triptype: {
@@ -18,7 +18,7 @@ const tripBookingSchema = new mongoose.Schema({
         required: true
     },
     date: {
-        type: Date,
+        type: String,
         required: true
     },
     message: {

@@ -9,6 +9,7 @@ import AdminLogin from "./routes/AdminLogin";
 import BookingForm from "./routes/BookingForm";
 import ScrollToTop from "./components/ScrollToTop";
 import DriversFeedback from "./routes/DriversFeedback";
+import MdtaAccessControl from "./routes/MdtaAccessControl";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
     <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="mdtaaccesscontrol" element={<MdtaAccessControl/>}/>
         <Route path="/driversfeedback" element={<DriversFeedback/>}/>
         <Route path="/leadership" element={<Leadership/>}/>
         <Route path="/about" element={<About/>}/>

@@ -45,7 +45,7 @@ router.get('/', validateToken, async (req, res) => {
 
     // Check if the logged in user has the role of 'main' or 'sub'
     const user = await User.findById(req.userId);
-    if (user.role !== 'main' && user.role !== 'sub') {
+    if (user.role !== 'main' && user.role !== 'bookings') {
       return res.status(401).json({ error: 'Unauthorized to view bookings' });
     }
 

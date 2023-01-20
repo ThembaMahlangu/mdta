@@ -38,7 +38,7 @@ router.get('/', validateToken, async (req, res) => {
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
-        if (user.role !== 'main' && user.role !== 'semi') {
+        if (user.role !== 'main' && user.role !== 'complains') {
             return res.status(401).json({ error: 'Unauthorized to view commuter feedback' });
         }
         // Find all commuter feedback in the database

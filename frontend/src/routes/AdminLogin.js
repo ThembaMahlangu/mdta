@@ -13,10 +13,10 @@ function AdminLogin() {
   const [error, setError] = useState(null);
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://your-api-url/users/login', { email, password })
+    axios.post('http://localhost:8000/api/users/login', { email, password })
       .then(response => {
         localStorage.setItem('token', response.data.token);
-        navigate('/partnerdashboard');
+        navigate('/admindashboard');
       })
       .catch(err => {
         setError(err.response.data.error);

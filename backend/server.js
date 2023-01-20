@@ -24,12 +24,12 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/users', usersRoutes);
-app.use('/driversfeedback', driversfeedbackRoutes);
-app.use('/commutersfeedback', commutersfeedbackRoutes);
-app.use('/complains', complainsRoutes);
-app.use('/tripbookings', tripbookingsRoutes);
-app.use('/staffbookings', staffbookingRoutes);
+app.use('/api/users', usersRoutes);
+app.use('/api/driversfeedback', driversfeedbackRoutes);
+app.use('/api/commutersfeedback', commutersfeedbackRoutes);
+app.use('/api/complains', complainsRoutes);
+app.use('/api/tripbookings', tripbookingsRoutes);
+app.use('/api/staffbookings', staffbookingRoutes);
 // app.use('/applications', applicationsRoutes);
 
 

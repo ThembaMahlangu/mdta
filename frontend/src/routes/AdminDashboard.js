@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 // import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Footer from '../components/Footer';
-import axios from 'axios';
-import '../components/AdminDashboards.css';
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+import axios from "axios";
+import "../components/AdminDashboards.css";
 
 function AdminDashboard() {
   const [driversfeedback, setDriversfeedback] = useState([]);
@@ -14,64 +14,73 @@ function AdminDashboard() {
 
   function handleLogout() {
     // Remove the token from local storage
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     // Redirect the user to the login page
-    window.location.href = '/adminlogin';
+    window.location.href = "/adminlogin";
   }
-  
+
   function getGreeting() {
     const currentHour = new Date().getHours();
     if (currentHour < 12) {
-      return 'Good morning';
+      return "Good morning";
     } else if (currentHour < 18) {
-      return 'Good afternoon';
+      return "Good afternoon";
     } else {
-      return 'Good evening';
+      return "Good evening";
     }
   }
-  
-  
+
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    axios.get('https://mdtas.onrender.com/api/driversfeedback', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(response => setDriversfeedback(response.data))
-      .catch(err => console.log(err));
-  
-    axios.get('https://mdtas.onrender.com/api/commutersfeedback', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(response => setCommutersfeedback(response.data))
-      .catch(err => console.log(err));
-  
-    axios.get('https://mdtas.onrender.com/api/complains', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(response => setComplains(response.data))
-      .catch(err => console.log(err));
-  
-    axios.get('https://mdtas.onrender.com/api/staffbookings', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(response => setStaffbookings(response.data))
-      .catch(err => console.log(err));
-  
-    axios.get('https://mdtas.onrender.com/api/tripbookings', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(response => setTripbookings(response.data))
-      .catch(err => console.log(err));
-  }, []);  
+    const token = localStorage.getItem("token");
+    axios
+      .get("https://mdtas.onrender.com/api/driversfeedback", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => setDriversfeedback(response.data))
+      .catch((err) => console.log(err));
+
+    axios
+      .get("https://mdtas.onrender.com/api/commutersfeedback", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => setCommutersfeedback(response.data))
+      .catch((err) => console.log(err));
+
+    axios
+      .get("https://mdtas.onrender.com/api/complains", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => setComplains(response.data))
+      .catch((err) => console.log(err));
+
+    axios
+      .get("https://mdtas.onrender.com/api/staffbookings", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => setStaffbookings(response.data))
+      .catch((err) => console.log(err));
+
+    axios
+      .get("https://mdtas.onrender.com/api/tripbookings", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => setTripbookings(response.data))
+      .catch((err) => console.log(err));
+  }, []);
 
   const TripBookingsTable = (data) => {
     return (
-      <table className='table-container'>
+      <table className="table-container">
         <thead>
           <tr>
             <th>Name</th>
@@ -83,7 +92,7 @@ function AdminDashboard() {
           </tr>
         </thead>
         <tbody>
-          {data.map(item => (
+          {data.map((item) => (
             <tr key={item._id}>
               <td>{item.name}</td>
               <td>{item.number}</td>
@@ -96,11 +105,11 @@ function AdminDashboard() {
         </tbody>
       </table>
     );
-  }
-  
+  };
+
   const StaffBookingsTable = (data) => {
     return (
-      <table className='table-container'>
+      <table className="table-container">
         <thead>
           <tr>
             <th>Name</th>
@@ -111,7 +120,7 @@ function AdminDashboard() {
           </tr>
         </thead>
         <tbody>
-          {data.map(item => (
+          {data.map((item) => (
             <tr key={item._id}>
               <td>{item.name}</td>
               <td>{item.number}</td>
@@ -123,11 +132,11 @@ function AdminDashboard() {
         </tbody>
       </table>
     );
-  } 
+  };
 
   const DriversFeedbackTable = (data) => {
     return (
-      <table className='table-container'>
+      <table className="table-container">
         <thead>
           <tr>
             <th>Topic</th>
@@ -135,7 +144,7 @@ function AdminDashboard() {
           </tr>
         </thead>
         <tbody>
-          {data.map(item => (
+          {data.map((item) => (
             <tr key={item._id}>
               <td>{item.subject}</td>
               <td>{item.message}</td>
@@ -144,11 +153,11 @@ function AdminDashboard() {
         </tbody>
       </table>
     );
-  } 
+  };
 
   const CommutersFeedbackTable = (data) => {
     return (
-      <table className='table-container'>
+      <table className="table-container">
         <thead>
           <tr>
             <th>Topic</th>
@@ -156,7 +165,7 @@ function AdminDashboard() {
           </tr>
         </thead>
         <tbody>
-          {data.map(item => (
+          {data.map((item) => (
             <tr key={item._id}>
               <td>{item.subject}</td>
               <td>{item.message}</td>
@@ -165,11 +174,11 @@ function AdminDashboard() {
         </tbody>
       </table>
     );
-  } 
+  };
 
   const ComplainsTable = (data) => {
     return (
-      <table className='table-container'>
+      <table className="table-container">
         <thead>
           <tr>
             <th>Topic</th>
@@ -177,7 +186,7 @@ function AdminDashboard() {
           </tr>
         </thead>
         <tbody>
-          {data.map(item => (
+          {data.map((item) => (
             <tr key={item._id}>
               <td>{item.subject}</td>
               <td>{item.message}</td>
@@ -186,7 +195,7 @@ function AdminDashboard() {
         </tbody>
       </table>
     );
-  } 
+  };
   return (
     <>
       {/* <Navbar/> */}
@@ -196,40 +205,37 @@ function AdminDashboard() {
         title="Admin Dashboard"
         btnClass="hide"
       />
-      <button className="download-btn" onClick={handleLogout}>Logout</button>
-    <div className="greeting-container">
-      <h2>Welcome, Admin!</h2>
-      <p>Today is {new Date().toLocaleDateString()}</p>
-    </div>
+        <button className="download-btn" onClick={handleLogout}>
+          Logout
+        </button>
+        <div className="greeting-container">
+          <h2>Welcome, Admin!</h2>
+          <p>Today is {new Date().toLocaleDateString()}</p>
+        </div>
 
       <div className="admin-dashboard-container">
-      <div className='card'>
-        <h2>Drivers Feedback</h2>
-        {DriversFeedbackTable(driversfeedback)}
-
-      </div>
-        <div className='card'>
-
-        <h2>Commuters Feedback</h2>
-        {CommutersFeedbackTable(commutersfeedback)}
+        <div className="card">
+          <h2>Drivers Feedback</h2>
+          {DriversFeedbackTable(driversfeedback)}
         </div>
-        <div className='card'>
-
-        <h2>Complains</h2>
-        {ComplainsTable(complains)}
+        <div className="card">
+          <h2>Commuters Feedback</h2>
+          {CommutersFeedbackTable(commutersfeedback)}
         </div>
-        <div className='card'>
-
-        <h2>Staff bookings</h2>
-        {StaffBookingsTable(staffbookings)}
+        <div className="card">
+          <h2>Complains</h2>
+          {ComplainsTable(complains)}
         </div>
-        <div className='card'>
-
-        <h2>Trip bookings</h2>
-        {TripBookingsTable(tripbookings)}
+        <div className="card">
+          <h2>Staff bookings</h2>
+          {StaffBookingsTable(staffbookings)}
+        </div>
+        <div className="card">
+          <h2>Trip bookings</h2>
+          {TripBookingsTable(tripbookings)}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -4,6 +4,7 @@ import "./ContactFormStyles.css";
 
 function ComplainsForm() {
   const form = useRef();
+  const [message, setMessage] = React.useState('');
 
   const sendComplain = (e) => {
     e.preventDefault();
@@ -13,6 +14,7 @@ function ComplainsForm() {
         message: e.target.message.value,
     })
     .then(response => {
+        setMessage("Complain Sent Successfully")
         console.log("complain sent");
     })
     .catch(error => {
@@ -31,6 +33,7 @@ function ComplainsForm() {
         <textarea name="message" placeholder="Please type out your complain here for the relevant department" rows={4}/>
         <button>Send Complain</button>
       </form>
+      {message && <p>{message}</p>}
     </div>
   );
 }

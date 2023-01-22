@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 
 function BookingForm() {
     const form = useRef();
+    const [message, setMessage] = React.useState('');
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ function BookingForm() {
         message: e.target.message.value,
     })
     .then(response => {
+      setMessage("Booking Submitted Successfully");
         console.log("booking sent");
     })
     .catch(error => {
@@ -55,6 +57,7 @@ function BookingForm() {
                 <button type='submit'>Submit Booking</button>
                 <a href='/contact'>Booking for a trip instead? Click Here</a>
             </form>
+            {message && <p>{message}</p>}
         </div>
         <Footer/>
     </>

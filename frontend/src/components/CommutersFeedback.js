@@ -4,6 +4,7 @@ import "./ContactFormStyles.css";
 
 function CommutersFeedback() {
   const form = useRef();
+  const [message, setMessage] = React.useState('');
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -13,6 +14,7 @@ function CommutersFeedback() {
         message: e.target.message.value,
     })
     .then(response => {
+      setMessage('Feedback Successfully Submited');
         console.log("feedback sent");
     })
     .catch(error => {
@@ -31,6 +33,7 @@ function CommutersFeedback() {
         <textarea name="message" placeholder="Please type out your feedback/suggestion here for the relevant department" rows={4}/>
         <button>Send Feedback</button>
       </form>
+      {message && <p>{message}</p>}
     </div>
   );
 }

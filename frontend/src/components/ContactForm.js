@@ -4,6 +4,7 @@ import "./ContactFormStyles.css";
 
 function ContactForm() {
   const form = useRef();
+  const [message, setMessage] = React.useState('');
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ function ContactForm() {
         message: e.target.message.value,
     })
     .then(response => {
+        setMessage("Booking Submitted Successfully")
         console.log("booking sent");
     })
     .catch(error => {
@@ -48,6 +50,7 @@ function ContactForm() {
         <button>Send Booking</button>
         <a href="/bookingform">Booking for Staff Transport instead? Click Here</a>
       </form>
+      {message && <p>{message}</p>}
     </div>
   );
 }

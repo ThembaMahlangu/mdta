@@ -11,7 +11,7 @@ const tripbookingsRoutes = require('./routes/tripbookings');
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect('mongodb+srv://schoolapp:Themba12345678@cluster0.3rt5wsz.mongodb.net/mdta-test?retryWrites=true&w=majority', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://schoolapp:Themba12345678@cluster0.3rt5wsz.mongodb.net/mdta?retryWrites=true&w=majority', { useNewUrlParser: true });
 const app = express();
 
 app.use(bodyParser.json());

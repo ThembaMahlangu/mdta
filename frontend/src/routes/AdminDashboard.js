@@ -14,35 +14,35 @@ function AdminDashboard() {
   
   useEffect(() => {
     const token = localStorage.getItem('token');
-    axios.get('http://44.203.139.39:8000/api/driversfeedback', {
+    axios.get('https://mdtas.onrender.com/api/driversfeedback', {
       headers: {
         Authorization: `Bearer ${token}`
       }
     }).then(response => setDriversfeedback(response.data))
       .catch(err => console.log(err));
   
-    axios.get('http://44.203.139.39:8000/api/commutersfeedback', {
+    axios.get('https://mdtas.onrender.com/api/commutersfeedback', {
       headers: {
         Authorization: `Bearer ${token}`
       }
     }).then(response => setCommutersfeedback(response.data))
       .catch(err => console.log(err));
   
-    axios.get('http://44.203.139.39:8000/api/complains', {
+    axios.get('https://mdtas.onrender.com/api/complains', {
       headers: {
         Authorization: `Bearer ${token}`
       }
     }).then(response => setComplains(response.data))
       .catch(err => console.log(err));
   
-    axios.get('http://44.203.139.39:8000/api/staffbookings', {
+    axios.get('https://mdtas.onrender.com/api/staffbookings', {
       headers: {
         Authorization: `Bearer ${token}`
       }
     }).then(response => setStaffbookings(response.data))
       .catch(err => console.log(err));
   
-    axios.get('http://44.203.139.39:8000/api/tripbookings', {
+    axios.get('https://mdtas.onrender.com/api/tripbookings', {
       headers: {
         Authorization: `Bearer ${token}`
       }

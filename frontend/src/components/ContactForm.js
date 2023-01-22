@@ -32,9 +32,12 @@ function ContactForm() {
       <h1>Specify your Booking Needs and Let Us Handle the rest</h1>
       <form ref={form} onSubmit={sendEmail}>
         <label>Full Name</label>
-        <input name="name" placeholder="Name"/>
+        <input name="name" placeholder="Name" />
         <label>Contact Number</label>
-        <input name="number" placeholder="What is your prefered contact number?"/>
+        <input
+          name="number"
+          placeholder="What is your prefered contact number?"
+        />
         <label>Trip Type</label>
         <select name="triptype">
           <option>Is this a single trip or return trip?</option>
@@ -42,13 +45,20 @@ function ContactForm() {
           <option>Return Trip</option>
         </select>
         <label>Destination</label>
-        <input name="destination" placeholder="Travel Destination"/>
+        <input name="destination" placeholder="Travel Destination" />
         <label>Travel Date</label>
-        <input name="date" placeholder="Which date will you be travelling?"/>
+        <input name="date" placeholder="Which date will you be travelling?" />
         <label>Message</label>
-        <textarea name="message" placeholder="Type Any Details We must keep in mind when handling your booking" rows={4}/>
+        <textarea
+          name="message"
+          placeholder="Type Any Details We must keep in mind when handling your booking"
+          rows={4}
+        />
         <button>Send Booking</button>
-        <a href="/bookingform">Booking for Staff Transport instead? Click Here</a>
+        <br />
+        <a href="/bookingform">
+          Booking for Staff Transport instead? Click Here
+        </a>
       </form>
       {message && <p>{message}</p>}
     </div>

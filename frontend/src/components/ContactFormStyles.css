@@ -3,6 +3,8 @@
     margin: 4rem 6rem;
     color: #2a2a2a;
     background-color: #e4e1e1;
+    padding-block: 20px;
+    border-radius: 10px;
 }
 
 .form-container form {

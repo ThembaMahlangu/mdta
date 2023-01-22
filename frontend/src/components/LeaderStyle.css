@@ -15,7 +15,9 @@
     -o-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
 }
-
+.container{
+    margin-inline:30px;
+}
 .team-item:hover {
     background: red;
     color: white;

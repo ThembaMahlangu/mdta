@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import axios from 'axios';
-import '../components/AdminDashboard.css';
+import '../components/AdminDashboards.css';
 
 function AdminDashboard() {
   const [driversfeedback, setDriversfeedback] = useState([]);
@@ -11,6 +11,25 @@ function AdminDashboard() {
   const [complains, setComplains] = useState([]);
   const [staffbookings, setStaffbookings] = useState([]);
   const [tripbookings, setTripbookings] = useState([]);
+
+  function handleLogout() {
+    // Remove the token from local storage
+    localStorage.removeItem('token');
+    // Redirect the user to the login page
+    window.location.href = '/adminlogin';
+  }
+  
+  function getGreeting() {
+    const currentHour = new Date().getHours();
+    if (currentHour < 12) {
+      return 'Good morning';
+    } else if (currentHour < 18) {
+      return 'Good afternoon';
+    } else {
+      return 'Good evening';
+    }
+  }
+  
   
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -52,7 +71,7 @@ function AdminDashboard() {
 
   const TripBookingsTable = (data) => {
     return (
-      <table>
+      <table className='table-container'>
         <thead>
           <tr>
             <th>Name</th>
@@ -81,7 +100,7 @@ function AdminDashboard() {
   
   const StaffBookingsTable = (data) => {
     return (
-      <table>
+      <table className='table-container'>
         <thead>
           <tr>
             <th>Name</th>
@@ -108,7 +127,7 @@ function AdminDashboard() {
 
   const DriversFeedbackTable = (data) => {
     return (
-      <table>
+      <table className='table-container'>
         <thead>
           <tr>
             <th>Topic</th>
@@ -129,7 +148,7 @@ function AdminDashboard() {
 
   const CommutersFeedbackTable = (data) => {
     return (
-      <table>
+      <table className='table-container'>
         <thead>
           <tr>
             <th>Topic</th>
@@ -150,7 +169,7 @@ function AdminDashboard() {
 
   const ComplainsTable = (data) => {
     return (
-      <table>
+      <table className='table-container'>
         <thead>
           <tr>
             <th>Topic</th>
@@ -170,24 +189,45 @@ function AdminDashboard() {
   } 
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Hero
-        cName="hero-contact"
+        cName="hero-dash"
         heroImg={"https://s.inyourpocket.com/gallery/218272.jpg"}
         title="Admin Dashboard"
         btnClass="hide"
       />
+      <button className="download-btn" onClick={handleLogout}>Logout</button>
+    <div className="greeting-container">
+      <h2>Welcome, Admin!</h2>
+      <p>Today is {new Date().toLocaleDateString()}</p>
+    </div>
+
       <div className="admin-dashboard-container">
+      <div className='card'>
         <h2>Drivers Feedback</h2>
         {DriversFeedbackTable(driversfeedback)}
+
+      </div>
+        <div className='card'>
+
         <h2>Commuters Feedback</h2>
         {CommutersFeedbackTable(commutersfeedback)}
+        </div>
+        <div className='card'>
+
         <h2>Complains</h2>
         {ComplainsTable(complains)}
+        </div>
+        <div className='card'>
+
         <h2>Staff bookings</h2>
         {StaffBookingsTable(staffbookings)}
+        </div>
+        <div className='card'>
+
         <h2>Trip bookings</h2>
         {TripBookingsTable(tripbookings)}
+        </div>
       </div>
       <Footer/>
     </>

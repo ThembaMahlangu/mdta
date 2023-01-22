@@ -13,7 +13,6 @@ function DriversFeedback() {
         cName="hero-contact"
         heroImg={AboutImg}
         title="Drivers Feedback"
-        text="He"
         btnClass="hide"
         />
         <DriversFeedbacks/>

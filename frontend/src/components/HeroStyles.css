@@ -5,6 +5,12 @@
     position: relative;
 }
 
+.hero-dash {
+    width: 100%;
+    height: 45vh;
+    position: relative;
+}
+
 .hero-home {
     width: 100%;
     height: 100vh;

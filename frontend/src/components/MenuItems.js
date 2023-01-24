@@ -10,7 +10,7 @@ export const MenuItems = [
     title : "Structure",
     url : "/leadership",
     cName : "nav-links",
-    icon : "fa-solid fa-person"
+    icon : "fa-solid fa-users"
   },
   {
     title : "About",
@@ -22,6 +22,6 @@ export const MenuItems = [
     title : "Bookings",
     url : "/contact",
     cName : "nav-links",
-    icon : "fa-solid fa-address-book"
+    icon : "fa-solid fa-taxi"
   },
 ];

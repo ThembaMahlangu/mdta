@@ -2,7 +2,7 @@ import Property from "../components/Property";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import TaxiRank from "../assets/Chosen1.jpg"
+import TaxiRank from "../assets/Chosen7.jpg"
 import CommutersFeedback from "../components/CommutersFeedback";
 import ComplainsForm from "../components/ComplainsForm";
 

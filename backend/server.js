@@ -33,7 +33,7 @@ app.get('/api', (req, res) => {
 })
 
 app.get('/.well-known/pki-validation/C36DE8AB73477A6EC16328BF69545CD0.txt', (req, res) => {
-  res.sendFile("./C36DE8AB73477A6EC16328BF69545CD0.txt")
+  res.sendFile('/home/mdta/backend/C36DE8AB73477A6EC16328BF69545CD0.txt')
 })
 
 app.use('/api/users', usersRoutes);

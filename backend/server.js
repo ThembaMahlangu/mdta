@@ -26,7 +26,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
   res.send({
     people: '444adf'
   })

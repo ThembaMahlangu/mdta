@@ -9,7 +9,7 @@ function ComplainsForm() {
   const sendComplain = (e) => {
     e.preventDefault();
 
-    axios.post('https://mdtas.onrender.com/api/complains', {
+    axios.post('http://44.203.139.39:8000/api/complains', {
         subject: e.target.subject.value,
         message: e.target.message.value,
     })

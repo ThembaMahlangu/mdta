@@ -13,7 +13,7 @@ function AdminLogin() {
   const [error, setError] = useState(null);
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('https://mdtas.onrender.com/api/users/login', { email, password })
+    axios.post('http://44.203.139.39:8000/api/users/login', { email, password })
       .then(response => {
         localStorage.setItem('token', response.data.token);
         navigate('/admindashboard');

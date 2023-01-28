@@ -33,7 +33,7 @@ function AdminDashboard() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("https://mdtas.onrender.com/api/driversfeedback", {
+      .get("http://44.203.139.39:8000/api/driversfeedback", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -42,7 +42,7 @@ function AdminDashboard() {
       .catch((err) => console.log(err));
 
     axios
-      .get("https://mdtas.onrender.com/api/commutersfeedback", {
+      .get("http://44.203.139.39:8000/api/commutersfeedback", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -51,7 +51,7 @@ function AdminDashboard() {
       .catch((err) => console.log(err));
 
     axios
-      .get("https://mdtas.onrender.com/api/complains", {
+      .get("http://44.203.139.39:8000/api/complains", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -60,7 +60,7 @@ function AdminDashboard() {
       .catch((err) => console.log(err));
 
     axios
-      .get("https://mdtas.onrender.com/api/staffbookings", {
+      .get("http://44.203.139.39:8000/api/staffbookings", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -69,7 +69,7 @@ function AdminDashboard() {
       .catch((err) => console.log(err));
 
     axios
-      .get("https://mdtas.onrender.com/api/tripbookings", {
+      .get("http://44.203.139.39:8000/api/tripbookings", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

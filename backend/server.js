@@ -8,6 +8,9 @@ const complainsRoutes = require('./routes/complains');
 const applicationsRoutes = require('./routes/applications');
 const staffbookingRoutes = require('./routes/staffbookings');
 const tripbookingsRoutes = require('./routes/tripbookings');
+const fs = require('fs');
+
+const file = fs.readFileSync('./C36DE8AB73477A6EC16328BF69545CD0.txt')
 
 mongoose.set('strictQuery', false);
 
@@ -23,6 +26,15 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
+app.get('/api', (req, res) => {
+  res.send({
+    people: '444adf'
+  })
+})
+
+app.get('/.well-known/pki-validation/C36DE8AB73477A6EC16328BF69545CD0.txt', (req, res) => {
+  res.sendFile("./C36DE8AB73477A6EC16328BF69545CD0.txt")
+})
 
 app.use('/api/users', usersRoutes);
 app.use('/api/driversfeedback', driversfeedbackRoutes);

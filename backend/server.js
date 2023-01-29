@@ -45,5 +45,5 @@ app.use('/api/staffbookings', staffbookingRoutes);
 const httpsServer = https.createServer(cred, app);
 httpsServer.listen(8000);
 
-console.log('Server listening on port 8443 (HTTPS)');
+console.log('Server listening on port 8000 (HTTPS)');
 console.log('Connected to MongoDB database');

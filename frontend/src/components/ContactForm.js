@@ -9,7 +9,7 @@ function ContactForm() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    axios.post('http://44.203.139.39:8000/api/tripbookings', {
+    axios.post('https://server.mdtas.co.za:8000/api/tripbookings', {
         name: e.target.name.value,
         number: e.target.number.value,
         triptype: e.target.triptype.value,

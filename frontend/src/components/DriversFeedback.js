@@ -8,7 +8,7 @@ function DriversFeedbacks() {
   const sendFeedback = (e) => {
     e.preventDefault();
 
-    axios.post('http://44.203.139.39:8000/api/driversfeedback', {
+    axios.post('https://server.mdtas.co.za:8000/api/driversfeedback', {
         subject: e.target.subject.value,
         message: e.target.message.value,
     })

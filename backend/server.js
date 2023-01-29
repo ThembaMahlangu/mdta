@@ -9,13 +9,19 @@ const applicationsRoutes = require('./routes/applications');
 const staffbookingRoutes = require('./routes/staffbookings');
 const tripbookingsRoutes = require('./routes/tripbookings');
 const fs = require('fs');
-
-const file = fs.readFileSync('./C36DE8AB73477A6EC16328BF69545CD0.txt')
+const https = require('https');
 
 mongoose.set('strictQuery', false);
 
 mongoose.connect('mongodb+srv://schoolapp:Themba12345678@cluster0.3rt5wsz.mongodb.net/mdta?retryWrites=true&w=majority', { useNewUrlParser: true });
 const app = express();
+const key = fs.readFileSync('private.key');
+const cert = fs.readFileSync('certificate.crt');
+
+const cred = {
+  key,
+  cert,
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,15 +32,6 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
-app.get('/', (req, res) => {
-  res.send({
-    people: '444adf'
-  })
-})
-
-app.get('/.well-known/pki-validation/C36DE8AB73477A6EC16328BF69545CD0.txt', (req, res) => {
-  res.sendFile('/home/ubuntu/mdta/backend/C36DE8AB73477A6EC16328BF69545CD0.txt')
-})
 
 app.use('/api/users', usersRoutes);
 app.use('/api/driversfeedback', driversfeedbackRoutes);
@@ -49,3 +46,6 @@ app.listen(8000, () => {
   console.log('\x1b[36m%s\x1b[0m', 'Connected to MongoDB Database');
   console.log('Server listening on port 8000');
 });
+
+const httpsServer = https.createServer(cred, app);
+httpsServer.listen(3000);

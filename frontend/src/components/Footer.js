@@ -73,7 +73,7 @@ const Footer = () => {
       </div>
       <div className="copyright">
         <p className="copyright-content">2023 Copyright | M.D.T.A</p>
-        <a href='https://wa.me/+27769360246'> Designed by EduLinkage</a>
+        <a href='https://wa.me/+27769360246'> Designed by AsyncFam</a>
       </div>
     </>
   );

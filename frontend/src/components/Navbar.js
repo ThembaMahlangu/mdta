@@ -2,6 +2,7 @@ import { Component } from "react";
 import "./NavbarStyles.css";
 import { MenuItems } from "./MenuItems";
 import { Link } from "react-router-dom";
+import LogoYam from "../assets/mdtalogo.png";
 
 class Navbar extends Component {
   // Set state
@@ -14,8 +15,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="NavbarItems">
-        <h1 className="navbar-logo">M.D.T.A</h1>
-
+      <img style={{height:75, width:180, padding: 10}} src={LogoYam}/>
           <div className="menu-icons" onClick={this.handleClick}>
             <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
           </div>

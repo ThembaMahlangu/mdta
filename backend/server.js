@@ -9,19 +9,19 @@ const applicationsRoutes = require('./routes/applications');
 const staffbookingRoutes = require('./routes/staffbookings');
 const tripbookingsRoutes = require('./routes/tripbookings');
 const fs = require('fs');
-const https = require('https');
+const http = require('http');
 
 mongoose.set('strictQuery', false);
 
 mongoose.connect('mongodb+srv://schoolapp:Themba12345678@cluster0.3rt5wsz.mongodb.net/mdta?retryWrites=true&w=majority', { useNewUrlParser: true });
 const app = express();
-const key = fs.readFileSync('private.key');
-const cert = fs.readFileSync('certificate.crt');
+// const key = fs.readFileSync('private.key');
+// const cert = fs.readFileSync('certificate.crt');
 
-const cred = {
-  key,
-  cert,
-}
+// const cred = {
+//   key,
+//   cert,
+// }
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -42,8 +42,7 @@ app.use('/api/staffbookings', staffbookingRoutes);
 // app.use('/applications', applicationsRoutes);
 
 
-const httpsServer = https.createServer(cred, app);
-httpsServer.listen(8000);
-
-console.log('Server listening on port 8000 (HTTPS)');
-console.log('Connected to MongoDB database');
+httpServer.listen(8000, () => {
+  console.log('\x1b[36m%s\x1b[0m', 'Connected to MongoDB Database');
+  console.log('Server listening on port 8000');
+});

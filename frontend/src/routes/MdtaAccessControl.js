@@ -11,7 +11,7 @@ function MdtaAccessControl() {
 
   const createUser = (e) => {
     e.preventDefault();
-    axios.post('https://server.mdtas.co.za:8000/api/users/register', {
+    axios.post('https://mdtas.onrender.com/api/users/register', {
         name: e.target.name.value,
         email: e.target.email.value,
         role: e.target.role.value,

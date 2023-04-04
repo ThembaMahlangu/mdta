@@ -11,7 +11,7 @@ function BookingForm() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    axios.post('https://server.mdtas.co.za:8000/api/staffbookings', {
+    axios.post('https://mdtas.onrender.com/api/staffbookings', {
         name: e.target.name.value,
         number: e.target.number.value,
         email: e.target.email.value,

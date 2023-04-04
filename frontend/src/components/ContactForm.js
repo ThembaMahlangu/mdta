@@ -9,7 +9,7 @@ function ContactForm() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    axios.post('https://server.mdtas.co.za:8000/api/tripbookings', {
+    axios.post('https://mdtas.onrender.com/api/tripbookings', {
         name: e.target.name.value,
         number: e.target.number.value,
         triptype: e.target.triptype.value,
@@ -60,7 +60,7 @@ function ContactForm() {
           Booking for Staff Transport instead? Click Here
         </a>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p style={{ color: "red"}}>{message}</p>}
     </div>
   );
 }

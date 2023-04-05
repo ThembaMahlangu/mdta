@@ -19,14 +19,14 @@ const app = express();
 // const cert = fs.readFileSync('certificate.crt');
 
 // const cred = {
-//   key,
-//   cert,
-// }
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use((req, res, next) => {
+  //   key,
+  //   cert,
+  // }
+  
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
+  
+  app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
@@ -41,6 +41,7 @@ app.use('/api/tripbookings', tripbookingsRoutes);
 app.use('/api/staffbookings', staffbookingRoutes);
 // app.use('/applications', applicationsRoutes);
 
+const httpServer = http.createServer(app);
 
 httpServer.listen(8000, () => {
   console.log('\x1b[36m%s\x1b[0m', 'Connected to MongoDB Database');
